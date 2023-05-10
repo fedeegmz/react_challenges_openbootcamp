@@ -4,20 +4,33 @@ import ContactComponent from './contact';
 import PropTypes from 'prop-types';
 
 
-const ContactDetail = ({ contact }) => {
+const ContactDetail = ({ contact, remove, changeState }) => {
     return (
         <div>
             Name: { contact.name }
             Lastname: { contact.lastname }
             Email: { contact.email }
-            <ContactComponent is_inline={ contact.is_inline }></ContactComponent>
+            <ContactComponent
+                contact={ contact }
+                changeState={changeState}
+            >
+
+            </ContactComponent>
+
+            <button
+                onClick={() => remove(contact)}
+            >
+                Remove
+            </button>
         </div>
     );
 };
 
 
 ContactDetail.propTypes = {
-    contact: PropTypes.instanceOf(Contact)
+    contact: PropTypes.instanceOf(Contact),
+    remove: PropTypes.func.isRequired,
+    changeState: PropTypes.func.isRequired,
 };
 
 

@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Contact } from './contact.class';
 
 
-const ContactComponent = ({ is_inline }) => {
-    const [inline, setInline] = useState(is_inline);
+const ContactComponent = ({ contact, changeState }) => {
+    // const [inline, setInline] = useState(is_inline);
 
     return (
         <div>
-            Conectado: Contacto { is_inline ? "En línea":"No Disponible" }
-            <button onClick={ () => setInline(!inline) }>{ is_inline ? "Desconectar":"Conectar" }</button>
+            { contact.is_inline ? "Online":"Disconnected" }
+            <button
+                onClick={ () => changeState(contact) }
+            >
+                { contact.is_inline ? "Disconnect":"Connect" }
+            </button>
         </div>
     );
 };
 
 
 ContactComponent.propTypes = {
-    is_inline: PropTypes.bool,
+    contact: PropTypes.instanceOf(Contact),
+    changeState: PropTypes.func.isRequired,
 };
 
 
