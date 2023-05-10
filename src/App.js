@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import ContactComponent from './challenge1/contact';
+import ClockFunction from './challenge2/clockFunction';
+import Clock from './challenge2/clockClass';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* CHALLENGE 1 */}
+      <h1>Challenge 1</h1>
+      <ContactComponent></ContactComponent>
+
+      {/* CHALLENGE 2 */}
+      <h1>Challenge 2</h1>
+      <Clock></Clock>
+      <ClockFunction></ClockFunction>
     </div>
   );
 }
