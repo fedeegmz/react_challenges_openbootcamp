@@ -37,7 +37,7 @@ const ClockFunction = () => {
             Hora Actual:
             {user.fecha.toLocaleTimeString()}
         </h2>
-        <h3>{this.user.nombre} {user.apellidos}</h3>
+        <h3>{user.nombre} {user.apellidos}</h3>
         <h1>Edad: {user.edad}</h1>
         </div>
     );
